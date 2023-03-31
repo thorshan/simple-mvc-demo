@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand sticky-top bg-dark">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/images/teem.png}" style="width: 5rem;">
+        </a>
+        <div class="navbar-nav d-flex justify-content-between">
+            <a class="nav-link text-white" th:href="@{/}">Home</a>
+            <a class="nav-link text-white" th:href="@{/about}">About</a>
+            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
+            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid px-5 my-3">
+    <a class="btn btn-primary" th:href="@{/courses/add}">Add Course</a>
+</div>
+
+<!--<div class="container-fluid">-->
+<!--    <table class="table">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                <th>#Id</th>-->
+<!--                <th>#Id</th>-->
+<!--                <th>#Id</th>-->
+<!--                <th>#Id</th>-->
+<!--                <th>#Id</th>-->
+<!--                <th>#Id</th>-->
+<!--            </tr>-->
+<!--        </thead>-->
+<!--    </table>-->
+<!--</div>-->
+
+<div class="container-fluid px-5">
+    <div class="row d-flex justify-content-start">
+        <div class="card mb-3 mx-3" style="width: 18rem;" th:each="courses : ${courses}">
+            <div class="card-body">
+                <h5 class="card-title" th:text="${courses.courseName}"></h5>
+                <small class="card-subtitle" th:text="'course:' + ${courses.id}"></small>
+                <p class="card-text" th:text="${courses.courseDescription}"></p>
+                <small class="card-text" th:text="${courses.createdDate}"></small>
+                <a class="btn btn-primary w-100" href="#">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/fontawesome.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand sticky-top bg-dark">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/images/teem.png}" style="width: 5rem;">
+        </a>
+        <div class="navbar-nav d-flex justify-content-between">
+            <a class="nav-link text-white" th:href="@{/}">Home</a>
+            <a class="nav-link text-white" th:href="@{/about}">About</a>
+            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
+            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+        </div>
+    </div>
+</nav>
+
+<div class="d-flex">
+    <div class="container bg-secondary float-start" style="width: 20%; height: 100vh;">
+        <nav class="nav flex-column align-middle">
+            <a class="nav-link text-white" th:href="@{/}">Dashboard</a>
+            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
+            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+        </nav>
+    </div>
+    <div class="container bg-white float-end p-3 d-flex" style="width: 85%;">
+        <div class="card mx-3" style="width: 12rem; height: 9rem;">
+            <div class="card-body">
+                <div class="card-title d-flex justify-content-start">
+                    <i class="fa fa-layer-group me-2"></i>
+                    <h5>Courses</h5>
+                </div>
+                <p class="card-text my-2" th:text="'Total : ' + ${courseCount} + ' courses'"></p>
+                <a class="btn btn-outline-primary w-100 my-2" th:href="@{/courses}">View</a>
+            </div>
+        </div>
+        <div class="card mx-3" style="width: 12rem; height: 9rem;">
+            <div class="card-body">
+                <div class="card-title d-flex justify-content-start align-middle">
+                    <i class="fa-solid fa-user me-2"></i>
+                    <h5>Students</h5>
+                </div>
+                <p class="card-text my-2">300 Students</p>
+                <a class="btn btn-outline-primary w-100 my-2" th:href="@{/students}">View</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand sticky-top bg-dark">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand" th:href="@{/}">
+            <img th:src="@{/images/teem.png}" style="width: 5rem;">
+        </a>
+        <div class="navbar-nav d-flex justify-content-between">
+            <a class="nav-link text-white" th:href="@{/}">Home</a>
+            <a class="nav-link text-white" th:href="@{/about}">About</a>
+            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
+            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+        </div>
+    </div>
+</nav>
+</body>
+</html>

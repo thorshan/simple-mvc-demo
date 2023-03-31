@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand sticky-top bg-dark">
+    <div class="container-fluid px-5">
+        <a class="navbar-brand text-white font-weight-bold" th:href="@{/}">
+            <img th:src="@{/images/teem.png}" style="width: 5rem;">
+        </a>
+        <div class="navbar-nav d-flex justify-content-between">
+            <a class="nav-link text-white" th:href="@{/}">Home</a>
+            <a class="nav-link text-white" th:href="@{/about}">About</a>
+            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
+            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+        </div>
+    </div>
+</nav>
+    <img th:src="@{/images/about.jpeg}" class="img-fluid mb-3">
+    <h3 class="mb-3 px-5">About Us</h3>
+    <blockquote class="blockquote p-5">To meet is to know, To know to meet.</blockquote>
+    <p class="px-5">
+        Nunc eu pulvinar massa, eu placerat diam. Integer faucibus lorem odio, eu vestibulum dolor imperdiet in. Aenean tristique metus a iaculis rutrum. Vestibulum pharetra condimentum est. Suspendisse at turpis in neque tristique interdum sit amet a purus. Aliquam dictum mauris id nisi malesuada, vel condimentum mi ornare. Integer eget sapien in metus malesuada ornare vel non ex. Maecenas volutpat dapibus bibendum. In tempor euismod urna eget fermentum.
+
+        Vivamus mattis ornare leo a pharetra. Morbi convallis ante erat, eu viverra augue volutpat ac. Praesent sit amet feugiat leo. Nullam nec eros rutrum, vestibulum magna nec, accumsan ipsum. Maecenas ornare lectus elit, nec venenatis purus venenatis eget. Duis feugiat eros fermentum turpis ultrices, sollicitudin fermentum dui aliquam. Maecenas rhoncus felis augue, vitae maximus mauris commodo at. Fusce odio nunc, posuere ut mi a, luctus mollis eros. Sed at quam quis nisi pellentesque gravida. Integer euismod purus vel nibh iaculis, sed mattis sapien maximus. Cras tempor tortor ultricies ex congue varius. Sed aliquam est nibh, a pellentesque metus suscipit a. Duis blandit auctor diam. Vestibulum vitae neque non lorem aliquam rhoncus vitae eget ex. Suspendisse porttitor tincidunt risus tincidunt pulvinar. Aenean nec eros lorem.
+
+        Proin finibus felis eu libero ultrices, sit amet placerat diam imperdiet. Sed commodo nisi ut volutpat consequat. Sed consequat mi vitae sodales efficitur. Integer sagittis facilisis nisl sed cursus. Vestibulum laoreet nibh a ante mattis, eu gravida nulla tristique. Praesent venenatis tortor at nulla vulputate placerat. Phasellus semper ante eget tellus ornare auctor. Nunc vel ornare orci, at vestibulum dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+
+        Maecenas imperdiet dapibus placerat. Pellentesque nec purus velit. Aliquam cursus ante quam, sit amet vulputate mi ornare in. Duis vehicula ipsum et massa venenatis, vel facilisis libero sagittis. Aliquam enim tortor, maximus ut lorem at, aliquet rhoncus mi. Ut quis laoreet metus. Pellentesque et orci in mi aliquam egestas.
+
+        Sed ultrices urna at turpis sagittis porta. Maecenas efficitur odio in dolor semper pulvinar. Curabitur tortor lacus, suscipit sit amet metus ut, efficitur viverra justo. Nulla pulvinar tempor lacus non lobortis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc varius ex et ligula faucibus condimentum eu et leo. Nam enim augue, ultrices eget dolor lacinia, tempor consectetur quam. Aenean consequat congue justo, vel tristique sapien dignissim et. Ut vitae mauris id massa sollicitudin gravida vel a neque. Nullam maximus at libero venenatis semper. Curabitur accumsan, velit non egestas euismod, ligula erat sagittis dolor, sed viverra ligula ex vitae ipsum.
+    </p>
+</body>
+</html>
