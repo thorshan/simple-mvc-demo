@@ -50,7 +50,7 @@
                 <small class="card-subtitle" th:text="'course:' + ${courses.id}"></small>
                 <p class="card-text" th:text="${courses.courseDescription}"></p>
                 <small class="card-text" th:text="${courses.createdDate}"></small>
-                <a class="btn btn-primary w-100" href="#">View</a>
+                <a class="btn btn-primary w-100" th:href="@{/course/view}">View</a>
             </div>
         </div>
     </div>
