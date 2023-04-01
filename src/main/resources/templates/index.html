@@ -57,7 +57,7 @@
                     <i class="fa-solid fa-user me-2"></i>
                     <h5>Students</h5>
                 </div>
-                <p class="card-text my-2">300 Students</p>
+                <p class="card-text my-2" th:text="'Total : ' + ${studentCount} + ' students'"></p>
                 <a class="btn btn-outline-primary w-100 my-2" th:href="@{/students}">View</a>
             </div>
         </div>

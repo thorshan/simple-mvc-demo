@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -23,4 +24,7 @@ public class Course {
     private Date createdDate;
 
     private Date updatedDate;
+
+    @OneToMany(mappedBy = "course")
+    private List<Students> students;
 }

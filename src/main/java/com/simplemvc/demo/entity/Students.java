@@ -3,11 +3,11 @@ package com.simplemvc.demo.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.Date;
+import lombok.ToString;
 
 @Data
 @NoArgsConstructor
+@ToString
 @Entity
 @Table(name = "students")
 public class Students {
@@ -20,10 +20,13 @@ public class Students {
 
     private String email;
 
+    private String phone;
+
     private String gender;
 
-    private Date dob;
+    private String dob;
 
     @ManyToOne
+    @JoinColumn(name = "course_id")
     private Course course;
 }

@@ -35,10 +35,22 @@
 <div class="container">
     <div class="flex-column my-2">
         <h4 class="mb-2" th:text="${courseName}"></h4>
-        <small class="mb-2" th:text="'course : id : ' + ${courseId}"></small>
-        <hr>
+        <small class="mb-2" th:text="'course : id : ' + ${id}"></small>
         <p class="mb-3" th:text="${courseDescription}"></p>
-
+        <hr>
+<!--        <form class="mb-3" th:action="@{/course/view}" th:object = "${student}" method="POST">-->
+<!--            <div class="form-group">-->
+<!--                <input-->
+<!--                        type = "text"-->
+<!--                        name = "studentName"-->
+<!--                        th:field = "*{studentName}"-->
+<!--                        class = "form-control"-->
+<!--                />-->
+<!--                <button type="submit" class = "btn btn-primary">-->
+<!--                    Add-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </form>-->
         <table class="table">
             <thead>
             <tr>
