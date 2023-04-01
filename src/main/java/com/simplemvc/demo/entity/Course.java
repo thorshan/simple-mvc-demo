@@ -25,6 +25,4 @@ public class Course {
 
     private Date updatedDate;
 
-    @OneToMany(mappedBy = "course")
-    private List<Students> students;
 }

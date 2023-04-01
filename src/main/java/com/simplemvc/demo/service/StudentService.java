@@ -13,5 +13,7 @@ public interface StudentService {
 
     Students saveStudent(Students students);
 
+    Students getStudentById(Integer id);
+
     long studentCount();
 }

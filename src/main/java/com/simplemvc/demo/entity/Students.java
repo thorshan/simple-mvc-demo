@@ -26,7 +26,11 @@ public class Students {
 
     private String dob;
 
-    @ManyToOne
-    @JoinColumn(name = "course_id")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "course_id", referencedColumnName = "id")
     private Course course;
+
+//    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "category_id", referencedColumnName = "category_id")
+//    private Category category;
 }

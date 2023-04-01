@@ -1,7 +1,6 @@
 package com.simplemvc.demo.controllers;
 
 import com.simplemvc.demo.entity.Course;
-import com.simplemvc.demo.entity.Students;
 import com.simplemvc.demo.service.CourseService;
 import com.simplemvc.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +33,7 @@ public class CourseController {
 
     @GetMapping("/courses")
     public String courses(Model model){
-        model.addAttribute("courses", courseService.getAllCourses());
+        model.addAttribute("course", courseService.getAllCourses());
         return "courses";
     }
 
@@ -53,20 +52,33 @@ public class CourseController {
         return "redirect:/courses";
     }
 
+//    @GetMapping("/course/view/{id}")
+//    public String viewCourse(
+//            @PathVariable("id") Integer id
+//            , Model model
+//    ){
+//        Optional<Course> courseById = courseService.getCourseById(id);
+//        if (courseById.isPresent()) {
+//            Course course = courseById.get();
+//            model.addAttribute("id", course.getId());
+//            model.addAttribute("courseName", course.getCourseName());
+//            model.addAttribute("courseDescription", course.getCourseDescription());
+//            return "view_course";
+//        } else {
+//            return "error_404";
+//        }
+//    }
+
     @GetMapping("/course/view/{id}")
     public String viewCourse(
-            @PathVariable Integer id, Model model
+            @PathVariable("id") Integer id, Model model
     ){
         Optional<Course> courseById = courseService.getCourseById(id);
-        if (courseById.isPresent()) {
-            Course course = courseById.get();
-            model.addAttribute("id", course.getId());
-            model.addAttribute("courseName", course.getCourseName());
-            model.addAttribute("courseDescription", course.getCourseDescription());
-            return "view_course";
-        } else {
-            return "error_404";
-        }
+        Course course = courseById.get();
+        model.addAttribute("course", courseService.getCourseById(id));
+        model.addAttribute("courseName", course.getCourseName());
+        model.addAttribute("courseDescription", course.getCourseDescription());
+        return "view_course";
     }
 
 }

@@ -60,11 +60,11 @@
             </tr>
             </thead>
             <tbody>
-<!--            <tr th:each="course : ${courses}">-->
-<!--                <th scope="row" th:text="${courses.id}"></th>-->
-<!--                <td th:text="${courses.courseName}"></td>-->
-<!--                <td th:text="${courses.courseName}"></td>-->
-<!--            </tr>-->
+            <tr th:each="student : ${student}">
+                <th scope="row" th:text="${student.id}"></th>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.dob}"></td>
+            </tr>
             </tbody>
         </table>
 

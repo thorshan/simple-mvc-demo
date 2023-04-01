@@ -44,13 +44,13 @@
 
 <div class="container-fluid px-5">
     <div class="row d-flex justify-content-start">
-        <div class="card mb-3 mx-3" style="width: 18rem;" th:each="courses : ${courses}">
+        <div class="card mb-3 mx-3" style="width: 18rem;" th:each="course : ${course}">
             <div class="card-body">
-                <h5 class="card-title" th:text="${courses.courseName}"></h5>
-                <small class="card-subtitle" th:text="'course:' + ${courses.id}"></small>
-                <p class="card-text" th:text="${courses.courseDescription}"></p>
-                <small class="card-text" th:text="${courses.createdDate}"></small>
-                <a class="btn btn-primary w-100" th:href="@{/course/view}">View</a>
+                <h5 class="card-title" th:text="${course.courseName}"></h5>
+                <small class="card-subtitle" th:text="'course:' + ${course.id}"></small>
+                <p class="card-text" th:text="${course.courseDescription}"></p>
+                <small class="card-text" th:text="${course.createdDate}"></small>
+                <a class="btn btn-primary w-100" th:href="@{/course/view/{id} (id=${course.id})}">View</a>
             </div>
         </div>
     </div>

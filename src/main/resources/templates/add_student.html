@@ -68,19 +68,19 @@
                         <option th:value="Female" th:text="Female"></option>
                     </select>
                 </div>
-<!--                <div class="mb-3">-->
-<!--                    <label for="exampleFormControlInput5" class="form-label">Select Course</label>-->
-<!--                    <select class="form-select"-->
-<!--                            id="exampleFormControlInput5"-->
-<!--                            aria-label="Default select example"-->
-<!--                            th:each="student : ${student}"-->
-<!--                            th:field="*{course}"-->
-<!--                            name="course">-->
-<!--                        <option th:each="course : ${student.course}"-->
-<!--                                th:text="${course.courseName}">-->
-<!--                        </option>-->
-<!--                    </select>-->
-<!--                </div>-->
+                <div class="mb-3">
+                    <label for="exampleFormControlInput5" class="form-label">Select Course</label>
+                    <select id="exampleFormControlInput5"
+                            th:field = "*{course}"
+                            name="course"
+                            class="form-select">
+                        <option th:value = "null">Choose course</option>
+                        <option th:each = "course : ${course}"
+                                th:value = "${course.id}"
+                                th:text = "${course.courseName}">
+                        </option>
+                    </select>
+                </div>
                 <div class="mb-3">
                     <button class="btn btn-primary w-100" type="submit">Create</button>
                 </div>
