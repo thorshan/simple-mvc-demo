@@ -61,7 +61,7 @@
             </thead>
             <tbody>
             <tr th:each="student : ${student}">
-                <th scope="row" th:text="${student.id}"></th>
+                <th th:text="${student.id}"></th>
                 <td th:text="${student.name}"></td>
                 <td th:text="${student.dob}"></td>
             </tr>

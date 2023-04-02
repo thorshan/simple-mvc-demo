@@ -1,7 +1,6 @@
 package com.simplemvc.demo.service.impl;
 
 
-import com.simplemvc.demo.entity.Course;
 import com.simplemvc.demo.entity.Students;
 import com.simplemvc.demo.repository.CourseRepository;
 import com.simplemvc.demo.repository.StudentRepository;
@@ -17,17 +16,9 @@ public class StudentServiceImpl implements StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    @Autowired
-    private CourseRepository courseRepository;
-
     @Override
     public List<Students> getAllStudents() {
         return studentRepository.findAll();
-    }
-
-    @Override
-    public List<Course> getAllCourses() {
-        return courseRepository.findAll();
     }
 
     @Override
@@ -38,6 +29,16 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Students getStudentById(Integer id) {
         return studentRepository.findById(id).get();
+    }
+
+    @Override
+    public Students updateStudent(Students students) {
+        return studentRepository.save(students);
+    }
+
+    @Override
+    public void deleteStudentById(Integer id) {
+        studentRepository.deleteById(id);
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class StudentController {
     @GetMapping("/students")
     public String students(Model model){
         model.addAttribute("student", studentService.getAllStudents());
+        model.addAttribute("course", courseService.getAllCourses());
         return "students";
     }
 
@@ -43,14 +45,36 @@ public class StudentController {
         return "redirect:/students";
     }
 
-//    @GetMapping("/add-product")
-//    public String addProductForm(Model model, Principal principal){
-//        if(principal == null){
-//            return "redirect:/login";
-//        }
-//        List<Category> categories = categoryService.findAllByActivated();
-//        model.addAttribute("categories", categories);
-//        model.addAttribute("product", new ProductDto());
-//        return "add-product";
-//    }
+    @GetMapping("/student/edit/{id}")
+    public String editStudent(
+            @PathVariable("id") Integer id, Model model
+    ){
+        model.addAttribute("course", courseService.getAllCourses());
+        model.addAttribute("student", studentService.getStudentById(id));
+        return "edit_student";
+    }
+
+    @PostMapping("/student/edit/{id}")
+    public String updateStudent(@PathVariable Integer id,
+                                @ModelAttribute("student") Students students,
+                                Model model) {
+
+        Students existingStudent = studentService.getStudentById(id);
+        existingStudent.setId(students.getId());
+        existingStudent.setName(students.getName());
+        existingStudent.setEmail(students.getEmail());
+        existingStudent.setGender(students.getGender());
+        existingStudent.setDob(students.getDob());
+        existingStudent.setPhone(students.getPhone());
+        existingStudent.setCourse(students.getCourse());
+
+        studentService.updateStudent(existingStudent);
+        return "redirect:/students";
+    }
+
+    @GetMapping("/students/{id}")
+    public String deleteStudent(@PathVariable Integer id) {
+        studentService.deleteStudentById(id);
+        return "redirect:/students";
+    }
 }

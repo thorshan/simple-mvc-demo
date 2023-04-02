@@ -27,25 +27,25 @@
     <div class="container my-3 d-flex justify-content-center">
         <div class="card p-3" style="width: 30rem;">
             <form th:action="@{/courses/add}" th:object="${courses}" method="post">
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Course Name</label>
+                <div class="form-floating mb-3">
                     <input type="text"
                            class="form-control"
-                           id="exampleFormControlInput1"
+                           id="floatingInput"
                            name="courseName"
                            th:field="*{courseName}" required />
+                    <label for="floatingInput" class="form-label">Course Name</label>
                 </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Course Description</label>
+                <div class="form-floating mb-3">
                     <textarea class="form-control"
-                              id="exampleFormControlTextarea1"
+                              id="floatingTextarea"
                               rows="3"
                               name="courseDescription"
                               th:field="*{courseDescription}">
                     </textarea>
+                    <label for="floatingTextarea" class="form-label">Course Description</label>
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary w-100" type="submit">Create</button>
+                    <button class="btn btn-dark w-100" type="submit">Create</button>
                 </div>
                 <div class="mb-3">
                     <a class="btn btn-secondary w-100" th:href="@{/courses}">Cancel</a>

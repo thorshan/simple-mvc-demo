@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Dashboard | Home Page</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -16,6 +17,7 @@
     <script th:src="@{/js/jquery.min.js}"></script>
     <script th:src="@{/js/popper.min.js}"></script>
     <script th:src="@{/js/fontawesome.min.js}"></script>
+    <script th:src="@{/js/custom.js}"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand sticky-top bg-dark">
@@ -33,29 +35,36 @@
 </nav>
 
 <div class="container-fluid px-5 my-3">
-    <a class="btn btn-primary" th:href="@{/student/add}">Add Student</a>
+    <a class="btn btn-dark" th:href="@{/student/add}">Add Student</a>
 </div>
 
-<div class="container">
-    <table class="table">
-        <thead>
+<div class="container-fluid px-5">
+    <table class="table table-striped table-hover">
+        <thead class="table-light">
         <tr>
-            <th scope="col">Id</th>
+            <th scope="col">No.</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone number</th>
             <th scope="col">Gender</th>
             <th scope="col">Date of Birth</th>
+            <th scope="col">Joined Course</th>
+            <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="student : ${student}">
-            <td th:text="${student.id}"></td>
+        <tr th:each="student, index: ${student}">
+            <td th:text="${index.count}"></td>
             <td th:text="${student.name}"></td>
             <td th:text="${student.email}"></td>
             <td th:text="${student.phone}"></td>
             <td th:text="${student.gender}"></td>
-            <td th:text="${student.dob}"></td>
+            <td th:text="${#strings.substring(student.dob, 0, 10)}"></td>
+            <td th:text="${student.course?.courseName}"></td>
+            <td class="d-inline-flex">
+                <a class="btn btn-dark mx-1" th:href="@{/student/edit/{id} (id = ${student.id})}">Edit</a>
+                <a class="btn btn-danger mx-1" th:href="@{/students/{id} (id = ${student.id})}">Delete</a>
+            </td>
         </tr>
         </tbody>
     </table>

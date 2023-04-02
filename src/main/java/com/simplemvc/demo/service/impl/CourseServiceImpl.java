@@ -1,7 +1,6 @@
 package com.simplemvc.demo.service.impl;
 
 import com.simplemvc.demo.entity.Course;
-import com.simplemvc.demo.entity.Students;
 import com.simplemvc.demo.repository.CourseRepository;
 import com.simplemvc.demo.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;

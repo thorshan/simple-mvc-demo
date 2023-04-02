@@ -24,7 +24,7 @@
 </nav>
 
 <div class="container-fluid px-5 my-3">
-    <a class="btn btn-primary" th:href="@{/courses/add}">Add Course</a>
+    <a class="btn btn-dark" th:href="@{/courses/add}">Add Course</a>
 </div>
 
 <!--<div class="container-fluid">-->
@@ -50,7 +50,7 @@
                 <small class="card-subtitle" th:text="'course:' + ${course.id}"></small>
                 <p class="card-text" th:text="${course.courseDescription}"></p>
                 <small class="card-text" th:text="${course.createdDate}"></small>
-                <a class="btn btn-primary w-100" th:href="@{/course/view/{id} (id=${course.id})}">View</a>
+                <a class="btn btn-dark w-100" th:href="@{/course/view/{id} (id=${course.id})}">View</a>
             </div>
         </div>
     </div>

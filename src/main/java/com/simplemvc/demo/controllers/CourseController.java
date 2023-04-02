@@ -52,23 +52,6 @@ public class CourseController {
         return "redirect:/courses";
     }
 
-//    @GetMapping("/course/view/{id}")
-//    public String viewCourse(
-//            @PathVariable("id") Integer id
-//            , Model model
-//    ){
-//        Optional<Course> courseById = courseService.getCourseById(id);
-//        if (courseById.isPresent()) {
-//            Course course = courseById.get();
-//            model.addAttribute("id", course.getId());
-//            model.addAttribute("courseName", course.getCourseName());
-//            model.addAttribute("courseDescription", course.getCourseDescription());
-//            return "view_course";
-//        } else {
-//            return "error_404";
-//        }
-//    }
-
     @GetMapping("/course/view/{id}")
     public String viewCourse(
             @PathVariable("id") Integer id, Model model

@@ -5,6 +5,7 @@
     <title>Dashboard | Home Page</title>
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" th:href="@{css/custom.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,27 +16,33 @@
     <script th:src="@{/js/fontawesome.min.js}"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand sticky-top bg-dark">
+<nav class="navbar navbar-expand navbar-dark sticky-top bg-dark shadow">
     <div class="container-fluid px-5">
         <a class="navbar-brand" th:href="@{/}">
             <img th:src="@{/images/teem.png}" style="width: 5rem;">
         </a>
         <div class="navbar-nav d-flex justify-content-between">
-            <a class="nav-link text-white" th:href="@{/}">Home</a>
-            <a class="nav-link text-white" th:href="@{/about}">About</a>
-            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
-            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+            <a class="nav-link" th:href="@{/}">Home</a>
+            <a class="nav-link" th:href="@{/about}">About</a>
+            <a class="nav-link" th:href="@{/courses}">Courses</a>
+            <a class="nav-link" th:href="@{/students}">Students</a>
         </div>
     </div>
 </nav>
 
 <!-- Side Nav Navigation-->
 <div class="d-flex">
-    <div class="container bg-secondary float-start" style="width: 20%; height: 100vh;">
-        <nav class="nav flex-column align-middle">
-            <a class="nav-link text-white" th:href="@{/}">Dashboard</a>
-            <a class="nav-link text-white" th:href="@{/courses}">Courses</a>
-            <a class="nav-link text-white" th:href="@{/students}">Students</a>
+    <div class="container float-start" style="width: 20%; height: 100vh; background: #edf0f1;">
+        <nav class="navbar-nav flex-column align-middle">
+            <div class="nav-item mt-3 p-2">
+                <a class="nav-link text-center" th:href="@{/}">Dashboard</a>
+            </div>
+            <div class="nav-item p-2">
+                <a class="nav-link text-center" th:href="@{/courses}">Courses</a>
+            </div>
+            <div class="nav-item p-2">
+                <a class="nav-link text-center" th:href="@{/students}">Students</a>
+            </div>
         </nav>
     </div>
 
@@ -44,11 +51,11 @@
         <div class="card mx-3" style="width: 12rem; height: 9rem;">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-start">
-                    <i class="fa fa-layer-group me-2"></i>
+                    <i class="fa-solid fa-book-open me-2"></i>
                     <h5>Courses</h5>
                 </div>
                 <p class="card-text my-2" th:text="'Total : ' + ${courseCount} + ' courses'"></p>
-                <a class="btn btn-outline-primary w-100 my-2" th:href="@{/courses}">View</a>
+                <a class="btn btn-outline-dark w-100 my-2" th:href="@{/courses}">View</a>
             </div>
         </div>
         <div class="card mx-3" style="width: 12rem; height: 9rem;">
@@ -58,7 +65,7 @@
                     <h5>Students</h5>
                 </div>
                 <p class="card-text my-2" th:text="'Total : ' + ${studentCount} + ' students'"></p>
-                <a class="btn btn-outline-primary w-100 my-2" th:href="@{/students}">View</a>
+                <a class="btn btn-outline-dark w-100 my-2" th:href="@{/students}">View</a>
             </div>
         </div>
     </div>

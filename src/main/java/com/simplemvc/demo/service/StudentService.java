@@ -9,11 +9,13 @@ public interface StudentService {
 
     List<Students> getAllStudents();
 
-    List<Course> getAllCourses();
-
     Students saveStudent(Students students);
 
     Students getStudentById(Integer id);
+
+    Students updateStudent(Students students);
+
+    void deleteStudentById(Integer id);
 
     long studentCount();
 }
